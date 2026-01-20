@@ -16,5 +16,5 @@ jobs:
        run: mvn Clean
        
       - name : Pakage
-       run:ls -lrt
+       run:ls -lrt target
   
