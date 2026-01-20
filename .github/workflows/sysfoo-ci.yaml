@@ -4,17 +4,21 @@ jobs:
   sysfoo-ci-job:
     runs-on: ubuntu-latest
     steps:
-      -name: Hello world
-       run: echo "welcome to sysfoo"
-      -name: Code Checkout
-       uses: actions/checkout@v6
-       
-      -name: Test
-       run: mvn test
-       
-      - name: Clean package 
-       run: mvn Clean
-       
-      - name : Pakage
-       run:ls -lrt target
+      - name: Hello World
+        run: echo "welcome to sysfoo"
+
+      - name: code checkout
+        uses: actions/checkout@v6
+
+      - name: Test
+        run: mvn test
+
+      -  name: clean package
+         run: mvn clean
+
+      -  name: Package
+         run: mvn package
+      -  name: View files
+         run: ls -lrt target
+
   
