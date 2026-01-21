@@ -1,5 +1,8 @@
 name: sysfoo-ci-pipeline
-on: [push]
+on:
+  push:
+    branches:
+      - 'master'
 jobs:
   sysfoo-ci-job:
     runs-on: ubuntu-latest
@@ -20,5 +23,13 @@ jobs:
          run: mvn package
       -  name: View files
          run: ls -lrt target
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sysfoo-war
+          path: target/*.war
+          retention-days: 5
+       
 
   
